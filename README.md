@@ -6,6 +6,8 @@ Here you can find a sample [Noir](http://webnoir.org) web app that will display 
 
 This project uses [claude](http://github.com/videlalvaro/claude), a library that exposes Cloud Foundry services to your Clojure apps.
 
+[![See a demo here](https://raw.github.com/videlalvaro/cloudfoundry-clojure-demo/master/doc/cljcf.png)](http://clojure-demo.cloudfoundry.com)]
+
 ## Deploying your Clojure apps to Cloud Foundry
 
 We asume that you are using [leiningen](https://github.com/technomancy/leiningen) for your Clojure projects.

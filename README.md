@@ -1,8 +1,8 @@
 # clojure-demo
 
-This project shows how you can integrate your Clojure apps with [Cloud Foundry](http://cloudfoundry.com).
+This project shows how to run your Clojure apps with [Cloud Foundry](http://cloudfoundry.com).
 
-Here you can find a sample Noir web app that will display the credentials for the Cloud Foundry services that you bind to it.
+Here you can find a sample [Noir](http://webnoir.org) web app that will display the credentials for the Cloud Foundry services that you bind to it.
 
 This project uses [claude](http://github.com/videlalvaro/claude), a library that exposes Cloud Foundry services to your Clojure apps.
 
@@ -10,7 +10,7 @@ This project uses [claude](http://github.com/videlalvaro/claude), a library that
 
 We asume that you are using [leiningen](https://github.com/technomancy/leiningen) for your Clojure projects.
 
-First you will add the latest version of `claude` into your project dependencies:
+First you will add the latest version of [claude](http://github.com/videlalvaro/claude) into your project dependencies:
 
 ```clojure
 [claude "0.2.1-SNAPSHOT"]
@@ -43,7 +43,7 @@ If you are creating a web app then another tweak you need to perform is to infor
                         :ns 'clojure-demo})))
 ```
 
-Also as you can see there we are using the `claude.core/cloudfoundry?` helper to see if we are running in the cloud. In that case we can set the web app environment to `:prod`.
+Also as you can see in that code snippet we are using the `claude.core/cloudfoundry?` helper to see if we are running in the cloud. In that case we can set the web app environment to `:prod`.
 
 So far we have a basic clojure project that can be run from a .jar file. Let's create that jar file and deploy it to Cloud Foundry. We asume that you are already logged into Cloud Foundry.
 

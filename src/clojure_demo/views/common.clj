@@ -7,8 +7,8 @@
               [:head
                [:title "Cloud Foundry Clojure Integration"]
                (include-css "/css/bootstrap.min.css"
-                            "/css/styles.css"
-                            "/css/bootstrap-responsive.min.css")]
+                            "/css/bootstrap-responsive.min.css"
+                            "/css/styles.css")]
               [:body
                [:div {:class "navbar navbar-inverse navbar-fixed-top"}
                 [:div {:class "navbar-inner"}

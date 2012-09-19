@@ -7,9 +7,9 @@
 (defn get-service-prop [service prop]
   ((ns-resolve service (symbol prop))))
 
-(defpartial service-prop [prop value]
-  [:dt prop]
-  [:dd value])
+(defpartial service-prop [service prop value]
+  [:dt [:code (str "(" service "/" prop ") => ")]]
+  [:dd [:code value]])
 
 (defpartial service-info [service props]
   [:div {:class "row-fluid"}
@@ -18,7 +18,7 @@
     [:p
      [:dl {:class "dl-horizontal"}
       (for [p props]
-        (service-prop p (get-service-prop service p)))]]]])
+        (service-prop service p (get-service-prop service p)))]]]])
 
 (defpartial mongodb-info []
   (service-info 'claude.mongodb

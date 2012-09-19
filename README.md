@@ -184,6 +184,10 @@ Starting Application 'clojure-demo': OK
 
 You can access a demo app [here](http://clojure-demo.cloudfoundry.com/).
 
+## NOTE
+
+At the moment (Sept. 2012) Clojure apps are not officialy suported in Cloud Foundry, but since Java is supported you can still run them.
+
 ## License
 
 Copyright (C) 2012 Alvaro Videla <avidela@vmware.com>

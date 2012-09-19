@@ -5,9 +5,6 @@
   (:use [noir.core :only [defpage defpartial]]
         claude.core))
 
-(defn mock-vcap-env []
-  (constantly (slurp (clojure.java.io/resource "json/1.json"))))
-
 (defn get-service-prop [service prop]
   ((ns-resolve service (symbol prop))))
 
@@ -16,10 +13,14 @@
   [:dd value])
 
 (defpartial service-info [service props]
-  [:div
-   [:h3 (str "Service: " service)]
-   [:dl (for [p props]
-          (service-prop p (get-service-prop service p)))]])
+  [:div {:class "row-fluid"}
+   [:a {:name (str service)}]
+   [:div
+    [:h2 (str service)]
+    [:p
+     [:dl {:class "dl-horizontal"}
+      (for [p props]
+        (service-prop p (get-service-prop service p)))]]]])
 
 (defpartial mongodb-info []
   (service-info 'claude.mongodb
@@ -33,7 +34,7 @@
 (defpartial mysql-info []
   (service-info 'claude.mysql
                 ["name" "hostname" "host" "port" "user"
-                 "username" "password" "db" "url"]))
+                 "username" "password"]))
 
 (defpartial rabbitmq-info []
   (service-info 'claude.rabbitmq
@@ -49,13 +50,11 @@
                 ["name" "host" "hostname" "port" "user"
                  "username" "password"]))
 
-(defpage "/services" []
-  (with-redefs [get-vcap-env (mock-vcap-env)]
-    (common/layout [:div
-                    (mongodb-info)
-                    (rabbitmq-info)
-                    (mysql-info)
-                    (postgresql-info)
-                    (redis-info)
-                    (blob-info)
-                    ])))
+(defpage "/" []
+    (common/layout
+      (mongodb-info)
+      (rabbitmq-info)
+      (mysql-info)
+      (postgresql-info)
+      (redis-info)
+      (blob-info)))

@@ -1,6 +1,5 @@
 (ns clojure-demo.views.services
   (:require [clojure-demo.views.common :as common]
-            [noir.content.getting-started]
             [claude mongodb rabbitmq postgresql redis blob mysql])
   (:use [noir.core :only [defpage defpartial]]
         claude.core))
@@ -14,9 +13,8 @@
 
 (defpartial service-info [service props]
   [:div {:class "row-fluid"}
-   [:a {:name (str service)}]
    [:div
-    [:h2 (str service)]
+    [:h2 (second (clojure.string/split (str service) #"\."))]
     [:p
      [:dl {:class "dl-horizontal"}
       (for [p props]
@@ -51,10 +49,16 @@
                  "username" "password"]))
 
 (defpage "/" []
-    (common/layout
-      (mongodb-info)
-      (rabbitmq-info)
-      (mysql-info)
-      (postgresql-info)
-      (redis-info)
-      (blob-info)))
+  (common/layout
+   [:div {:class "span12"}
+    [:div {:class "hero-unit"}
+     [:h1 "Clojure - Cloud Foundry"]
+     [:p "Explaing Clojure usage in Cloud Foundry"]
+     [:p [:a {:class "btn btn-primary btn-large"} "Learn More"]]
+     ] ;; hero-unit
+    (mongodb-info)
+    (rabbitmq-info)
+    (mysql-info)
+    (postgresql-info)
+    (redis-info)
+    (blob-info)]))

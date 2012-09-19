@@ -30,10 +30,4 @@
                   ]]] ;; closes outer divs
                [:div {:class "container-fluid"}
                 [:div {:class "row-fluid"}
-                 [:div {:class "span12"}
-                  [:div {:class "hero-unit"}
-                   [:h1 "Clojure - Cloud Foundry"]
-                   [:p "Explaing Clojure usage in Cloud Foundry"]
-                   [:p [:a {:class "btn btn-primary btn-large"} "Learn More"]]
-                   ]
-                   content]]]]))
+                 content]]]))

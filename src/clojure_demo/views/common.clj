@@ -30,20 +30,7 @@
                   ]]] ;; closes outer divs
                [:div {:class "container-fluid"}
                 [:div {:class "row-fluid"}
-                 [:div {:class "span3"}
-                  [:div {:class "well sidebar-nav"}
-                   [:ul {:class "nav nav-list"}
-                    [:li {:class "nav-header"} "Services"]
-                    [:li {:class "active"} [:a {:href "#claude.mongodb"} "MongoDB"]]
-                    [:li {:class ""} [:a {:href "#claude.mysql"} "RabbitMQ"]]
-                    [:li {:class ""} [:a {:href "#claude.mysql"} "MySQL"]]
-                    [:li {:class ""} [:a {:href "#claude.postgresql"} "Postgresql"]]
-                    [:li {:class ""} [:a {:href "#claude.redis"} "Redis"]]
-                    [:li {:class ""} [:a {:href "#claude.blob"} "Blob"]]
-                    ] ;; ul
-                   ] ;; well
-                  ] ;; span
-                 [:div {:class "span9"}
+                 [:div {:class "span12"}
                   [:div {:class "hero-unit"}
                    [:h1 "Clojure - Cloud Foundry"]
                    [:p "Explaing Clojure usage in Cloud Foundry"]

@@ -24,7 +24,9 @@ Then run `lein deps` to obtain the project dependencies.
 
 Once you have your project set up then you  need to declare your project `main` function:
 
-  :main clojure-demo.server
+```clojure
+:main clojure-demo.server
+```
 
 See this project `project.clj` file for more details.
 
@@ -49,7 +51,7 @@ If you are creating a web app then another tweak you need to perform is to infor
 
 Also as you can see in that code snippet we are using the `claude.core/cloudfoundry?` helper to see if we are running in the cloud. In that case we can set the web app environment to `:prod`.
 
-So far we have a basic clojure project that can be run from a .jar file. Let's create that jar file and deploy it to Cloud Foundry. We asume that you are already logged into Cloud Foundry.
+So far we have a basic clojure project that can be run from a .jar file. Let's create that jar file and deploy it to Cloud Foundry. We asume that you are already logged into [Cloud Foundry](http://cloudfoundry.com).
 
 ```bash
 mkdir cf

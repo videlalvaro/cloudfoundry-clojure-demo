@@ -73,8 +73,8 @@ Detected a Standalone Application, is this correct? [Yn]: Y
 5: node08
 6: ruby18
 7: ruby19
-Select Runtime [java]: java
-Selected java
+Select Runtime [java]: java7
+Selected java7
 Start Command: java $JAVA_OPTS -cp clojure-demo-0.1.0-SNAPSHOT-standalone.jar clojure_demo.server
 ```
 
